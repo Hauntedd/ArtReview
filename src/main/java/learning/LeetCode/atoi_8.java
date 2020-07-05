@@ -28,16 +28,16 @@ public class atoi_8 {
         } else if (chars[idx] == '+') {
             // 遇到正号
             idx++;
-        } else if (!Character.isDigit(chars[idx])) {//这里使用了一个API判断是否为字符是否是一个数字
+        } else if (!Character.isDigit(chars[idx])) {//这里使用了一个API判断字符是否是一个数字
             // 其他符号
             return 0;
         }//处理完之后可以开始考虑数字了
         int ans = 0;
-        while (idx < n && Character.isDigit(chars[idx])) {
-            int digit = chars[idx] - '0';
-            if (ans > (Integer.MAX_VALUE - digit) / 10) {
-                // 本来应该是 ans * 10 + digit > Integer.MAX_VALUE
-                // 但是 *10 和 + digit 都有可能越界，所有都移动到右边去就可以了。
+        while (idx < n && Character.isDigit(chars[idx])) {//判断为数字，且没有溢出数组
+            int digit = chars[idx] - '0';//用ascii编号来求数字
+            if (ans > (Integer.MAX_VALUE - digit) / 10 ||((ans == Integer.MAX_VALUE / 10) &&digit>Integer.MAX_VALUE % 10)) {//int越界的处理，补上或才严谨
+                // 本来应该是 ans * 10 + digit > Integer.MAX_VALUE(和7题有些许相似)
+                // 但是 *10 和 + digit 都有可能越界，所有都移动到右边去就可以了。(可以个锤子，想当然了)
                 return negative? Integer.MIN_VALUE : Integer.MAX_VALUE;
             }
             ans = ans * 10 + digit;
