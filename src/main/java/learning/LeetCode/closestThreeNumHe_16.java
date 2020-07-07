@@ -27,9 +27,10 @@ public class closestThreeNumHe_16 {
                 }
                 if(sum < target ){//这里的移动不管上面是否满足都需要执行
                     while (i<j && nums[i] == nums[++i]) {}//让sum增大
-                }else{
+                }else if(sum > target){
                     while (i<j && nums[j] == nums[--j]) {}//让sum减小
-                }
+                }else
+                    return res;
             }
         }
         return res;
