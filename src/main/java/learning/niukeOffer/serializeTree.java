@@ -19,7 +19,6 @@ class TreeNode {
     }
 
 }
-
 public class serializeTree {
     String Serialize(TreeNode root) {
         if(root == null)
