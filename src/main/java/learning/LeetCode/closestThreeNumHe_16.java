@@ -21,7 +21,8 @@ public class closestThreeNumHe_16 {
             while (i<j){
                 int sum = nums[k] + nums[i] + nums[j];
                 int closer = Math.abs((sum - target));//差的绝对值
-                if(closer < Math.abs((res - target))){//差值小于当前的最接近值
+                int closest = Math.abs((res - target));
+                if(closer < closest){//差值小于当前的最接近值
                     res = sum;
                     //while (i<j && nums[i] == nums[++i]) {}//相当于移动左边的标的同时过滤重复元祖
                 }
