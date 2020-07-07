@@ -21,8 +21,8 @@ public class longestSubPre_14 {
                     break;
                 }
                 ans = ans.substring(0,j);//前闭后开
-//                if("".equals(ans))
-//                    return ans;//好像是多余的判断
+                if("".equals(ans))
+                    return ans;//好像是用来判断第一个字符串是否为空，不过有必要吗？
             }
         }
         return ans;
