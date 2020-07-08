@@ -11,7 +11,7 @@ import java.util.Queue;
 public class linkedListKto1_22 {
     public ListNode mergeKLists(ListNode[] lists) {
         // 创建优先队列，设置比较器为队列节点值从小到大排列。v1-v2是小顶堆，v2-v1就是大顶堆
-        Queue<ListNode> pq = new PriorityQueue<>((v1, v2) -> v1.val - v2.val);//这个队列会自动根据节点值大小来排列链表，根节点最小的在最前面
+        Queue<ListNode> pq = new PriorityQueue<>((v1, v2) -> v1.val - v2.val);//lambda表达式，这个队列会自动根据节点值大小来排列链表，根节点最小的在最前面
         // 将数组中有序链表的头节点依次加入到优先队列中。
         for (ListNode node : lists) {
             if(node != null){//把每条链表都添加到队列中
@@ -34,7 +34,7 @@ public class linkedListKto1_22 {
     }
 }
 
-/*参考：两两合并(递归)
+/*参考：两两合并(递归)，要写三个函数，还是上面的方法好一点
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists.length == 0) {
@@ -50,7 +50,7 @@ class Solution {
         int mid = lo + (hi - lo) / 2;
         ListNode l1 = merge(lists, lo, mid);
         ListNode l2 = merge(lists, mid + 1, hi);
-        return merge2Lists(l1, l2);
+        return merge2Lists(l1, l2);//这是上一道题合并方法
     }
 }
 * */
