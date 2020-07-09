@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.*;
+import java.util.stream.Collectors;
+
 //注意一个事儿啊，输入形式尤其是最终到0结束那种，不需要按照给的输入样例一样一次性读入，一行一行读然后输出就可以了
 public class testClass {
     public static void main(String[] args) {
@@ -16,9 +18,9 @@ public class testClass {
 //        absValue();
 //        maxInput();
 //        System.out.println("8".compareTo("15"));
-        int m;
-        m = 1 + (1 +2 )/2;
-        System.out.println(m);
+        List<String> strings = Arrays.asList("abc","","bc","efg","abcd","","jkl");//java8新特性，流stream（不是IO流）
+        List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());//collect规约操作，主要用于类型转换
+        System.out.println(filtered);
 
     }
 
