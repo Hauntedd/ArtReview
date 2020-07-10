@@ -18,10 +18,13 @@ public class testClass {
 //        absValue();
 //        maxInput();
 //        System.out.println("8".compareTo("15"));
-        List<String> strings = Arrays.asList("abc","","bc","efg","abcd","","jkl");//java8新特性，流stream（不是IO流）
-        List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());//collect规约操作，主要用于类型转换
-        System.out.println(filtered);
 
+//        List<String> strings = Arrays.asList("abc","","bc","efg","abcd","","jkl");//java8新特性，流stream（不是IO流）
+//        List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());//collect规约操作，主要用于类型转换
+//        System.out.println(filtered);
+//        String test = "abcd";
+        int a;
+        System.out.println(a=5);//输出：5
     }
 
     public static void sortTest(){
