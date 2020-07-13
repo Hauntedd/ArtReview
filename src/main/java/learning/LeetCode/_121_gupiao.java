@@ -16,4 +16,15 @@ public class _121_gupiao {
         }
         return maxprofit;
     }
+
+    public int maxProfit2(int[] prices) {//122.你可以尽可能地完成更多的交易（多次买卖一支股票）,求最大利润。顺序遍历应该就可以（只求利润的话）
+
+        int maxprofit = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if(prices[i]>prices[i-1]){
+                maxprofit += prices[i] - prices[i-1];
+            }
+        }
+        return maxprofit;
+    }
 }
