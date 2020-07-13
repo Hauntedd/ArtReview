@@ -24,7 +24,7 @@ public class _78_subset {
         List<List<Integer>> output = new ArrayList();
         output.add(new ArrayList<Integer>());//先把默认的空集添加进去
         for (int num:nums) {
-            List<List<Integer>> newSubs = new ArrayList<>();//存放加了整数的子集
+            List<List<Integer>> newSubs = new ArrayList<>();//存放加了整数的子集(防止发生覆盖，新建一个)
             for (List<Integer> curr : output) {//一开始只有空，每一轮都在所有旧子集上添加新数字
                 List<Integer> temp = new ArrayList<Integer>(curr);
                 temp.add(num);
