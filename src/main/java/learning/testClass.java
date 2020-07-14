@@ -23,8 +23,10 @@ public class testClass {
 //        List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());//collect规约操作，主要用于类型转换
 //        System.out.println(filtered);
 //        String test = "abcd";
-        int a;
-        System.out.println(a=5);//输出：5
+//        int a;
+////        System.out.println(a=5);//输出：5
+        String str = "abcd";
+        System.out.println(str +"efg");
     }
 
     public static void sortTest(){
