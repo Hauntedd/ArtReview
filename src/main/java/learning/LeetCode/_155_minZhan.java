@@ -10,12 +10,12 @@ pop() —— 删除栈顶的元素。
 top() —— 获取栈顶元素。
 getMin() —— 检索栈中的最小元素。
 * */
-public class _148_minZhan {
+public class _155_minZhan {
 
     private Stack<Integer> stack;
     private Stack<Integer> min_stack;
     /** initialize your data structure here. */
-    public _148_minZhan() {//构造函数
+    public _155_minZhan() {//构造函数
         stack = new Stack<>();
         min_stack = new Stack<>();
     }
