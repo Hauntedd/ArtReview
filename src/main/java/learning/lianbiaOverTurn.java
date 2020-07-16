@@ -17,8 +17,8 @@ public class lianbiaOverTurn {
             return head;
         ListNode temp = head.next;//临时存储下一个节点
         ListNode newHead = reverseList(head.next);//这个递归返回值只用来获取原链表的尾巴
-        temp.next = head;
-        head.next = null;
+        temp.next = head;//反向连接
+        head.next = null;//断开正向连接
         return newHead;
     }
 }

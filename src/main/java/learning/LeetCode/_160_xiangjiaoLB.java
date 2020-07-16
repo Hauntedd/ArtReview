@@ -13,9 +13,11 @@ public class _160_xiangjiaoLB {
             return null;
         ListNode nodeA = headA;
         ListNode nodeB = headB;
-        while (nodeA != nodeB){
+        while (nodeA != nodeB){//两个指针分别来回遍历两条链表，必然相遇
 //            nodeA = (nodeA == null):
+            nodeA = (nodeA != null) ? nodeA.next : headB;//注意：判断条件不能加next,保证在没有交点的情况下同时等于null跳出循环;
+            nodeB = (nodeB != null) ? nodeB.next : headA;
         }
-        return null;
+        return nodeA;
     }
 }
