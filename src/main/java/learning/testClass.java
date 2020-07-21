@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Collectors;
 
 //注意一个事儿啊，输入形式尤其是最终到0结束那种，不需要按照给的输入样例一样一次性读入，一行一行读然后输出就可以了
@@ -27,6 +29,11 @@ public class testClass {
 ////        System.out.println(a=5);//输出：5
         String str = "abcd";
         System.out.println(str +"efg");
+        ConcurrentMap<String,Integer> testMap = new ConcurrentHashMap<>();
+        //hashMap更好的线程安全版本，分16桶，需要锁的时候只锁一个桶就行，size操作的时候才锁定整个hash表
+        //但是1.8及以后放弃了分段锁：1.加入多个分段锁浪费内存空间。
+        //2.生产环境中， map 在放入时竞争同一个锁的概率非常小，分段锁反而会造成更新等操作的长时间等待。
+        //3.为了提高 GC 的效率
     }
 
     public static void sortTest(){
