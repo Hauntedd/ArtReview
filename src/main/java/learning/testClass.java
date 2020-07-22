@@ -27,13 +27,22 @@ public class testClass {
 //        String test = "abcd";
 //        int a;
 ////        System.out.println(a=5);//输出：5
-        String str = "abcd";
-        System.out.println(str +"efg");
-        ConcurrentMap<String,Integer> testMap = new ConcurrentHashMap<>();
+
+//        String str = "abcd";
+//        System.out.println(str +"efg");
+//        ConcurrentMap<String,Integer> testMap = new ConcurrentHashMap<>();
         //hashMap更好的线程安全版本，分16桶，需要锁的时候只锁一个桶就行，size操作的时候才锁定整个hash表
         //但是1.8及以后放弃了分段锁：1.加入多个分段锁浪费内存空间。
         //2.生产环境中， map 在放入时竞争同一个锁的概率非常小，分段锁反而会造成更新等操作的长时间等待。
         //3.为了提高 GC 的效率
+//        String test = "hello";
+//        for (int i = 0; i < 100000000; i++) {//模拟一下内存溢出outofmemory(扩展栈),stackoverflow(一直递归调用(加深栈)就可以实现）
+//            test +=test;
+//        }
+//        System.out.println(test);
+        char testA = '淦';//char对应unicode编码，所以可以存储unicode编码中包含的汉字字符
+        System.out.println(testA);
+        new testClass().testMethod();//静态方法中待用非静态方法
     }
 
     public static void sortTest(){
@@ -117,4 +126,5 @@ public class testClass {
             }
         }
     }
+    void testMethod(){}
 }
