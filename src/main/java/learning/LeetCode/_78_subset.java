@@ -1,7 +1,6 @@
 package main.java.learning.LeetCode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 /*

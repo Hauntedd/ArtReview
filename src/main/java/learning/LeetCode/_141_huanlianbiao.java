@@ -11,7 +11,7 @@ public class _141_huanlianbiao {
     public boolean hasCycle(ListNode head) {
         Set<ListNode> nodesSeen = new HashSet<>();//用来存储遍历过的节点的引用
         while (head != null){
-            if(nodesSeen.contains(head))//这个可以记一下，contains方法针对的是对象
+            if(nodesSeen.contains(head))//这个可以记一下，contains方法针对的是对象equals
                 return true;
             else
                 nodesSeen.add(head);

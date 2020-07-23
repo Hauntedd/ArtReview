@@ -40,9 +40,18 @@ public class testClass {
 //            test +=test;
 //        }
 //        System.out.println(test);
+
         char testA = '淦';//char对应unicode编码，所以可以存储unicode编码中包含的汉字字符
         System.out.println(testA);
         new testClass().testMethod();//静态方法中待用非静态方法
+
+        FlyPig f1 = new FlyPig();
+        FlyPig f2 = new FlyPig();
+        System.out.println(f1.equals(f2));//没有重写的equals和==是一样的，比较引用的地址(即指向的对象hashcode)；例如String类，就比较的是对象的内容
+
+        short s1 = 1;
+        s1 += 1;
+        System.out.println(s1);
     }
 
     public static void sortTest(){
@@ -127,4 +136,11 @@ public class testClass {
         }
     }
     void testMethod(){}
+
+    /**
+     * 泛型方法
+     */
+    public <K,V> V put(K key, V value){//泛型的基本使用
+        return value;
+    }
 }
