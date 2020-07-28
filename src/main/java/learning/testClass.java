@@ -9,6 +9,8 @@ import java.util.Scanner;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.stream.Collectors;
 
 //注意一个事儿啊，输入形式尤其是最终到0结束那种，不需要按照给的输入样例一样一次性读入，一行一行读然后输出就可以了
@@ -40,15 +42,16 @@ public class testClass {
 //            test +=test;
 //        }
 //        System.out.println(test);
-
+        
         char testA = '淦';//char对应unicode编码，所以可以存储unicode编码中包含的汉字字符
         System.out.println(testA);
         new testClass().testMethod();//静态方法中待用非静态方法
 
         FlyPig f1 = new FlyPig();
         FlyPig f2 = new FlyPig();
-        System.out.println(f1.equals(f2));//没有重写的equals和==是一样的，比较引用的地址(即指向的对象hashcode)；例如String类，就比较的是对象的内容
+        System.out.println(f1.equals(f2));//没有重写的equals和==是一样的，比较引用的地址(并非指向的对象hashcode)；例如String类，就比较的是对象的内容
 
+        System.out.println("===================================");
         String a = new String("abcdefg");
         String b = "abc" + "defg";
         System.out.println(a.hashCode()+";"+b.hashCode());
