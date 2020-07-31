@@ -60,6 +60,17 @@ public class testClass {
         short s1 = 1;
         s1 += 1;
         System.out.println(s1);
+
+        System.out.println("===================================");
+        List<Integer> list = new ArrayList<>();list.add(1);list.add(2);list.add(3);list.add(2);
+        int[] test = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            test[i] = list.get(i);
+        }
+        for (int i : test) {
+            System.out.println(i);
+        }
+
     }
 
     public static void sortTest(){
