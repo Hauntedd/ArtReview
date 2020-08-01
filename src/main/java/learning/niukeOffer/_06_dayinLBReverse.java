@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
+从尾到头打印链表
 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
 * */
 public class _06_dayinLBReverse {
@@ -14,7 +15,7 @@ public class _06_dayinLBReverse {
         ListNode(int val) { this.val = val; }
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
-    List<Integer> temp = new ArrayList<>();
+    List<Integer> temp = new ArrayList<>();//这是全局变量
     public int[] reversePrint(ListNode head) {
         recur(head);
         int[] res = new int[temp.size()];
@@ -22,7 +23,7 @@ public class _06_dayinLBReverse {
             res[i] = temp.get(i);
         return res;
     }
-    void recur(ListNode head){//递归
+    void recur(ListNode head){//递归到尾巴，再依次返回
         if(head == null) return;
         recur(head.next);
         temp.add(head.val);

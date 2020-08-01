@@ -70,6 +70,9 @@ public class testClass {
         for (int i : test) {
             System.out.println(i);
         }
+        System.out.println("===================================");
+        List<Integer> ttest = new LinkedList<>();
+
 
     }
 
