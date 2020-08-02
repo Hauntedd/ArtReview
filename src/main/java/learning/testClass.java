@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 
 //注意一个事儿啊，输入形式尤其是最终到0结束那种，不需要按照给的输入样例一样一次性读入，一行一行读然后输出就可以了
 public class testClass {
+    public static int main(){return 1;}
     public static void main(String[] args) {
 
 //        sortTest();
@@ -72,6 +73,23 @@ public class testClass {
         }
         System.out.println("===================================");
         List<Integer> ttest = new LinkedList<>();
+
+        List<String> temp1 = new ArrayList<>();
+        List<? extends String> temp2 = new ArrayList<>();
+        List<Object> temp3 = new ArrayList<>();
+        System.out.println(temp1.getClass() == temp2.getClass());
+        System.out.println(temp1.getClass() == temp3.getClass());//编译以后不带泛型信息，泛型擦除
+        System.out.println(temp1.getClass());
+        System.out.println("===================================");
+        Integer test1 = 1;
+        Integer test2 = 1;
+        Integer test3 = 300;//自动装箱会优先寻找缓存（-128~127）,没找到就新建对象
+        Integer test4 = 300;
+        System.out.println(test1 == test2);//使用缓存所以是同一个对象所以true
+        System.out.println(test3 == test4);//新建对象所以false
+        System.out.println(test3.equals(test4));
+
+        System.out.println(main());
 
 
     }

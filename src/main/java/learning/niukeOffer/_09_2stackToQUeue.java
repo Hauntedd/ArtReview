@@ -6,12 +6,12 @@ import java.util.LinkedList;
 /*
 用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。
 (若队列中没有元素，deleteHead 操作返回 -1 )
-
+先进后出，制造先进先出
 * */
 public class _09_2stackToQUeue {
 
-    Deque<Integer> stack1;
-    Deque<Integer> stack2;
+    Deque<Integer> stack1;//存数据
+    Deque<Integer> stack2;//导入数据用于输出
 
     public _09_2stackToQUeue() {
         stack1 = new LinkedList<Integer>();
