@@ -2,6 +2,7 @@ package main.java.learning;
 
 import sun.security.util.Length;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -90,6 +91,9 @@ public class testClass {
         System.out.println(test3.equals(test4));
 
         System.out.println(main());
+        Integer sInt = 100;
+        WeakReference<Integer> weakInt = new WeakReference<Integer>(sInt);
+
 
 
     }
