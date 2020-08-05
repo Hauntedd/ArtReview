@@ -94,7 +94,9 @@ public class testClass {
         Integer sInt = 100;
         WeakReference<Integer> weakInt = new WeakReference<Integer>(sInt);
 
-
+        System.out.println("===================================");
+        findDX("G9E6Z3F1A1B2CD4");
+        deleteMulti("AAAAAABBCC");
 
     }
 
@@ -186,5 +188,59 @@ public class testClass {
      */
     public <K,V> V put(K key, V value){//泛型的基本使用
         return value;
+    }
+
+    public static void findDX(String str){//先转型为数组，然后使用数组的排序，在循环遍历即可
+        char[] chars = str.toCharArray();
+        Arrays.sort(chars);
+        StringBuilder sb = new StringBuilder();
+        for (char c : chars) {
+            if(c >='A'&& c<= 'Z'){
+                sb.append(c);
+            }
+        }
+//        String result = sortString(sb.toString());
+        System.out.println(sb.toString().length() + ":" +sb.toString());
+    }
+
+    public static void deleteMulti(String string){//字符串去重
+        List<Character> list = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < string.length(); i++) {
+            if(!list.contains(string.charAt(i))){
+                list.add(string.charAt(i));
+                sb.append(string.charAt(i));
+            }
+        }
+        System.out.println(sb.toString());
+    }
+
+    public static ListNode removeNodeAtN(ListNode node,int n){//也可以使用双指针。先让两个指针有n的间隔，然后用间隔来寻找需要删除的节点（只需一次遍历）
+        //首先遍历第一次,获取链表的长度
+        ListNode head = node;
+        ListNode pre=null,temp=null;
+        int count = 0;
+        while (node!=null){
+            node = node.next;
+            count++;
+        }
+        if(count < n)
+            return node;//链表长度小于n直接返回，或者n%count也可以
+        count -= n;//正数第n-1个
+        for (int i = 0; i <=count ; i++) {//第二次遍历，删除指定节点
+            if(i==0){
+                temp = head;
+            }
+            else{
+                pre = temp;
+                temp = temp.next;
+            }
+        }
+        pre = temp.next;
+        temp.next = null;
+        if(count ==0)
+            return pre;//新的头节点
+        else
+            return head;
     }
 }
