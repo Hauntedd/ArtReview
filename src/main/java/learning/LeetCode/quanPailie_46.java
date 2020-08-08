@@ -3,7 +3,7 @@ package main.java.learning.LeetCode;
 import java.util.*;
 
 /*
-给定一个 没有重复 数字的序列，返回其所有可能的全排列。
+给定一个 没有重复 数字的序列，返回其所有可能的全排列。(字符串思想应该类似)
 * */
 public class quanPailie_46 {
     public void backtrack(int n,//序列长度

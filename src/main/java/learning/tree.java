@@ -1,5 +1,7 @@
 package main.java.learning;
-
+/*
+二叉树基本操作
+* */
 import java.util.Scanner;
 
 public class tree {
@@ -49,7 +51,7 @@ public class tree {
                 if(this.left == null){
                     this.left = newNode;
                 }else{
-                    this.left.addNode(newNode);
+                    this.left.addNode(newNode);//递归添加
                 }
             }else if (newNode.name.compareTo(this.name) > 0){//右子树
                 if(this.right == null){

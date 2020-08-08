@@ -1,6 +1,8 @@
 package main.java.learning;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Objects;
 
 public class FlyPig implements Serializable {
     //private static final long serialVersionUID = 1L;//(版本一致性，如果代码进行了微调，这个值默认生成的值会发生变化导致无法识别旧数据)
@@ -43,4 +45,19 @@ public class FlyPig implements Serializable {
         this.car = car;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FlyPig flyPig = (FlyPig) o;
+        return Objects.equals(name, flyPig.name) &&
+                Objects.equals(color, flyPig.color) &&
+                Objects.equals(car, flyPig.car);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, color, car);
+    }
 }
