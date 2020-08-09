@@ -8,14 +8,14 @@ import java.util.List;
 你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
 * */
 public class _38_quanpailie {
-    List<String> res = new LinkedList<>();
+    List<String> res = new LinkedList<>();//保存答案的List
     char[] c;
     public String[] permutation(String s) {
         c = s.toCharArray();
         dfs(0);
         return res.toArray(new String[res.size()]);
     }
-    void dfs(int x) {
+    void dfs(int x) {//参数是字符的索引
         if(x == c.length - 1) {
             res.add(String.valueOf(c)); // 添加排列方案
             return;
@@ -26,7 +26,7 @@ public class _38_quanpailie {
             set.add(c[i]);
             swap(i, x); // 交换，将 c[i] 固定在第 x 位
             dfs(x + 1); // 开启固定第 x + 1 位字符
-            swap(i, x); // 恢复交换
+            swap(i, x); // 恢复交换，这里是回溯，相当于本次操作之后将数组还原，不影响其他的操作
         }
     }
     void swap(int a, int b) {
