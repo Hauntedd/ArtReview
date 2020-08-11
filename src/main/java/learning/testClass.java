@@ -51,7 +51,13 @@ public class testClass {
 
         FlyPig f1 = new FlyPig();
         FlyPig f2 = new FlyPig();
+        FlyPig f3 = new FlyPig();
+        FlyPig f4 = new FlyPig();
         System.out.println(f1.equals(f2));//没有重写的equals和==是一样的，比较引用的地址(并非指向的对象hashcode)；例如String类，就比较的是对象的内容
+        System.out.println(f1.getTest());
+        System.out.println(f2.getTest());
+        System.out.println(f3.getTest());
+        System.out.println(f4.getTest());
 
         System.out.println("===================================");
         String a = new String("abcdefg");
