@@ -7,6 +7,7 @@ import java.util.Scanner;
 /*
 字符串分段输出：
 例：输入abc；输出：a,b,c,ab,ac,abc
+递归+回溯
 * */
 public class zstringFD {
     public static void main(String[] args){
