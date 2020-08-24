@@ -104,6 +104,14 @@ public class testClass {
         findDX("G9E6Z3F1A1B2CD4");
         deleteMulti("AAAAAABBCC");
 
+        System.out.println("===================================");
+        Set hset = new HashSet<Integer>();//java会自动装箱,所以都是OK的
+        for (int i = 0; i < 3; i++) {
+            if(hset.add(1))
+                System.out.println("没有重复");
+            else
+                System.out.println("有重复");
+        }
     }
 
     public static void sortTest(){
