@@ -70,7 +70,7 @@ public class fastSort {
             result[k++] = arr[start1++];
         while (start2 <= end2)
             result[k++] = arr[start2++];
-        for (k = start; k <= end; k++)
+        for (k = start; k <= end; k++)//每一次归并之后把结果同步到arr中去
             arr[k] = result[k];
     }
 
